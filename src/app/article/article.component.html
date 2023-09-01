@@ -1,0 +1,15 @@
+<div>
+    <ul>
+        <li *ngFor=" let art of articles">
+            <p>{{art.title}}</p>
+            <p>{{art.link}}</p>
+            <p>{{art.votes}}</p>
+            <button (click)="selectArticle(art)">Update</button>
+            <button (click)="deleteArticle(art.id)">Delete</button>
+        </li>
+        <li *ngIf="">
+          
+        </li>
+        
+    </ul>
+</div>
