@@ -1,0 +1,21 @@
+<form [formGroup]="myForm" (ngSubmit)="addArticle(newTitle, newLink)" [class.error]="!myForm.valid && myForm.touched">
+
+    <h3>Ajouter un article</h3>
+  
+    <div [class.error]="!titreIn.valid && titreIn.touched"> 
+      <label for="title">Titre:</label>
+      <input name="title" #newTitle [formControl]="$any(titreIn)"> 
+    </div>
+  
+    <div > 
+      <label for="link">Link:</label>
+      <input name="link" #newLink [formControl]="$any(linkIn)">
+    </div>
+  
+    <div *ngIf="!titreIn.valid" >le titre est vide</div>
+    <div *ngIf="linkIn.hasError('required')"> le lien est requis svp !</div>
+    <button type="submit" [disabled]="titreIn.invalid">Ajouter</button>
+  </form>
+  
+  <app-article  [articles]="articles" (articleSelected)="selectArticle($event)" > </app-article>
+  

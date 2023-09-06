@@ -1,17 +1,2 @@
-<form action="">
 
-  <h3>Ajouter un article</h3>
-
-  <div> 
-    <label for="title">Titre:</label>
-    <input name="title" #newTitle> 
-  </div>
-
-  <div> 
-    <label for="link">Link:</label>
-    <input name="link" #newLink>
-  </div>
-  <button (click)="addArticle(newTitle,newLink)">Ajouter</button>
-</form>
-
-<app-article  [articles]="articles" (articleSelected)="selectArticle($event)" > </app-article>
+<router-outlet></router-outlet>
